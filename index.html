@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cáscara</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .landing {
+      position: relative;
+      width: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .background-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .video-mobile {
+      display: none;
+    }
+
+    .overlay {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .logo {
+      width: min(340px, 48vw);
+      height: auto;
+      margin-bottom: 45px;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 55px;
+    }
+
+    .navigation a {
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      transition: opacity 0.25s ease;
+    }
+
+    .navigation a:hover {
+      opacity: 0.55;
+    }
+
+    @media (max-width: 700px) {
+      .video-desktop {
+        display: none;
+      }
+
+      .video-mobile {
+        display: block;
+      }
+
+      .logo {
+        width: 58vw;
+        max-width: 280px;
+        margin-bottom: 42px;
+      }
+
+      .navigation {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .navigation a {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="landing">
+
+    <video
+      class="background-video video-desktop"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="video-horizontal.mp4" type="video/mp4">
+    </video>
+
+    <video
+      class="background-video video-mobile"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source src="video-vertical.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay">
+
+      <img
+        src="logo.png"
+        alt="Cáscara"
+        class="logo"
+      >
+
+      <nav class="navigation">
+        <a href="#">Argentina</a>
+        <a href="#">Rest of the World</a>
+        <a href="#">Archive</a>
+      </nav>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

@@ -28,8 +28,6 @@
       background: #000;
     }
 
-    /* FONDOS */
-
     .background {
       position: absolute;
       inset: 0;
@@ -43,29 +41,15 @@
       display: none;
     }
 
-    /* CONTENIDO */
-
     .overlay {
       position: relative;
       z-index: 1;
       width: 100%;
       height: 100%;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: white;
     }
-
-    /* LOGO */
-
-    .logo {
-      width: min(340px, 48vw);
-      height: auto;
-      margin-bottom: 45px;
-    }
-
-    /* NAVEGACIÓN */
 
     .navigation {
       display: flex;
@@ -88,8 +72,6 @@
       opacity: 0.55;
     }
 
-    /* CELULAR */
-
     @media (max-width: 700px) {
 
       .video-desktop {
@@ -100,10 +82,10 @@
         display: block;
       }
 
-      .logo {
-        width: 58vw;
-        max-width: 280px;
-        margin-bottom: 42px;
+      .overlay {
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 13vh;
       }
 
       .navigation {
@@ -122,8 +104,6 @@
 
   <main class="landing">
 
-    <!-- FONDO DESKTOP: lo definimos después -->
-
     <video
       class="background video-desktop"
       autoplay
@@ -134,32 +114,18 @@
       <source src="video-horizontal.mp4" type="video/mp4">
     </video>
 
-
-    <!-- FONDO CELULAR -->
-
     <img
       class="background image-mobile"
       src="https://res.cloudinary.com/dsppfoxzs/image/upload/v1789244763/cpm35_2026-09-12_172519A17AAE82844A_msp1s8.jpg"
       alt=""
     >
 
-
-    <!-- LOGO + LINKS -->
-
     <div class="overlay">
-
-      <img
-        src="logo.png"
-        alt="Cáscara"
-        class="logo"
-      >
-
       <nav class="navigation">
         <a href="#">Argentina</a>
         <a href="#">Rest of the World</a>
         <a href="#">Archive</a>
       </nav>
-
     </div>
 
   </main>

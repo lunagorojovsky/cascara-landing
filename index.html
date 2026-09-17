@@ -77,6 +77,38 @@
       opacity: 0.55;
     }
 
+    .background {
+  opacity: 0;
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+.navigation a {
+  opacity: 0;
+  animation: fadeIn 0.45s ease-out forwards;
+}
+
+.navigation a:nth-child(1) {
+  animation-delay: 0.20s;
+}
+
+.navigation a:nth-child(2) {
+  animation-delay: 0.30s;
+}
+
+.navigation a:nth-child(3) {
+  animation-delay: 0.40s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
     @media (max-width: 700px) {
 
       .image-desktop {
